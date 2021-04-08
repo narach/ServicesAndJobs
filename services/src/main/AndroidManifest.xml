@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.servicesandjobs">
+    package="com.example.services">
 
     <application
         android:allowBackup="true"
@@ -9,15 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ServicesAndJobs">
-        <service
-            android:name=".services.CustomIntentService"
-            android:exported="false">
-        </service>
 
-        <service
-            android:name=".services.CustomService"
-            android:enabled="true"
-            android:exported="true"></service>
+        <service android:name=".CustomService"/>
 
         <activity android:name=".MainActivity">
             <intent-filter>
