@@ -109,6 +109,7 @@ class TimerService : LifecycleService() {
     }
 
     private fun stopService() {
+        stopForeground(true)
         postInitialValues()
         isFirstRun = true
     }

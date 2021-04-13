@@ -58,6 +58,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun stopTimer() {
         sendCommandToService(Constants.ACTION_STOP_SERVICE)
+        isTracking = false
+        binding.btnTimerStop.visibility = View.GONE
+        binding.btnTimerStart.text = "START TIMER"
+        binding.tvTimerStatus.text = "Stopped"
+        binding.tvTimer.text = "00:00:00"
     }
 
     private fun toggleRun() {
@@ -72,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         this.isTracking = isTracking
         if(!isTracking) {
             binding.btnTimerStart.text = "RESUME TIMER"
-            binding.btnTimerStop.visibility = View.GONE
+//            binding.btnTimerStop.visibility = View.GONE
             binding.tvTimerStatus.text = "Paused"
         } else {
             binding.btnTimerStart.text = "PAUSE TIMER"
