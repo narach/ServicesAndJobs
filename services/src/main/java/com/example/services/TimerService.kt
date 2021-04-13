@@ -68,6 +68,7 @@ class TimerService : LifecycleService() {
                 }
                 Constants.ACTION_STOP_SERVICE -> {
                     Timber.d("Stopping service")
+                    stopService()
                 }
             }
         }
@@ -105,6 +106,11 @@ class TimerService : LifecycleService() {
     private fun pauseService() {
         isTracking.postValue(false)
         isTimerEnabled = false
+    }
+
+    private fun stopService() {
+        postInitialValues()
+        isFirstRun = true
     }
 
     // Start the service in Foreground
